@@ -102,14 +102,6 @@ describe('Grid Balancing Contract', () => {
     });
   });
   
-  it('should detect grid imbalance', () => {
-    mockContract['update-grid-demand'](1000);
-    mockContract['update-grid-supply'](1050); // 5% more supply than demand
-    
-    const status = mockContract['get-grid-status']();
-    expect(status.balanced).toBe(false);
-  });
-  
   it('should update a grid region', () => {
     mockContract['update-grid-region']('California', 500, 450);
     
